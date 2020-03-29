@@ -4,8 +4,8 @@ import Covid19 from './components/Covid19';
 
 const App = () => {
   return (
-    <div className="App">
-      <main className="App-main">
+    <div>
+      <main>
         <Covid19 />
       </main>
     </div>

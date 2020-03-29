@@ -16,7 +16,7 @@ const Covid19 = props => {
     return result;
   }
   useEffect(() => {
-    const result = getDataFromAPI(requestUrl).then(response => setCovid19Data(response));
+    const result = getDataFromAPI(requestUrl).then(response => setCovid19Data(response.data));
   }, [props])
 
   return (

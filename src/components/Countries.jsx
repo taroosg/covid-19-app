@@ -10,10 +10,10 @@ const Countries = props => {
         defaultValue={'World'}
       >
         {
-          props.covid19Data?.data
-            ?.map?.(x => x.location)
-            ?.filter((x, index, self) => self.indexOf(x) === index)
-            ?.map?.((x, index) =>
+          props.covid19Data
+            .map(x => x.location)
+            .filter((x, index, self) => self.indexOf(x) === index)
+            .map((x, index) =>
               <option key={index} value={x} >{x}</option>
             )
         }

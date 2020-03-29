@@ -1,36 +1,17 @@
 import React from 'react';
+import Datatable from './DataTable';
 
 const Datasets = props => {
+
+  const compare = param => (a, b) => !a.hasOwnProperty(param) || !b.hasOwnProperty(param) ? 0 : (a[param].toUpperCase() > b[param].toUpperCase()) ? -1 : 1;
+
   return (
-    <table>
-      {/* <p>{props?.covid19Location ?? ''}</p> */}
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Location</th>
-          <th>new_cases</th>
-          <th>new_deaths</th>
-          <th>total_cases</th>
-          <th>total_deaths</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          props.covid19Data.data
-            .filter(x => x.location === props.covid19Location)
-            .map((x, index) =>
-              <tr key={index}>
-                <td>{x.date}</td>
-                <td>{x.location}</td>
-                <td>{x.new_cases}</td>
-                <td>{x.new_deaths}</td>
-                <td>{x.total_cases}</td>
-                <td>{x.total_deaths}</td>
-              </tr>
-            )
-        }
-      </tbody>
-    </table>
+    <Datatable
+      covid19Data={props.covid19Data}
+      covid19Location={props.covid19Location}
+      compare={compare}
+    />
   );
 }
+
 export default Datasets;
