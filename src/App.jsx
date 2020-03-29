@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
+import Covid19 from './components/Covid19';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <main className="App-main">
-        <p>
-          <code>COVID-19</code>
-        </p>
+        <Covid19 />
       </main>
     </div>
   );
