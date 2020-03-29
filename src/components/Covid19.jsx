@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Countries from './Countries';
-import DataSets from './Datatets';
+import DataSets from './DataSets';
 
 const Covid19 = props => {
   const [covid19Data, setCovid19Data] = useState(null);
