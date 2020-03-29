@@ -6,11 +6,8 @@ import Datasets from './Datasets';
 const Covid19 = props => {
   const [covid19Data, setCovid19Data] = useState(null);
   const [covid19Location, setCovid19Location] = useState('World');
-  // const handleDate = () => {
-  //   setCovid19Data(null);
-  // }
-  // const requestUrl = 'https://us-central1-covid-19-92892.cloudfunctions.net/api/covid19'
-  const requestUrl = 'http://localhost:5000/covid-19-92892/us-central1/api/covid19';
+  const requestUrl = 'https://us-central1-covid-19-92892.cloudfunctions.net/api/covid19'
+  // const requestUrl = 'http://localhost:5000/covid-19-92892/us-central1/api/covid19';
   const getDataFromAPI = async url => {
     const result = await axios.get(url);
     return result;
