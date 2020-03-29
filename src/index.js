@@ -9,9 +9,8 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <React.StrictMode>
     <Helmet
-      title={'Hello World'}
+      title={'COVID-19'}
       meta={[
-        { name: 'twitter:card', content: 'COVID-19-app' },
         { name: "twitter:card", content: "summary_large_image" },
         { property: 'og:image', content: 'https://taroosg-covid-19-app.netlify.com/banner.jpg' },
         { property: 'og:title', content: 'COVID-19' },
