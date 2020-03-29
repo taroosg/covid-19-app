@@ -19,7 +19,7 @@ const Covid19 = props => {
   return (
     <div>
       {covid19Data === null
-        ? <code>now loading...</code>
+        ? <div className="loading"><code>now loading...</code></div>
         : <div>
           <p><code>COVID-19</code></p>
           <Countries
