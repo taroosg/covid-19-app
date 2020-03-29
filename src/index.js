@@ -12,6 +12,7 @@ ReactDOM.render(
       title={'COVID-19'}
       meta={[
         { name: "twitter:card", content: "summary_large_image" },
+        { name: 'twitter:image', content: 'https://taroosg-covid-19-app.netlify.com/banner.jpg' },
         { property: 'og:image', content: 'https://taroosg-covid-19-app.netlify.com/banner.jpg' },
         { property: 'og:title', content: 'COVID-19' },
         { property: 'og:description', content: 'COVID-19-app' },
