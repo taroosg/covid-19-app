@@ -21,12 +21,10 @@ const Covid19 = props => {
 
   return (
     <div>
-      <p>
-        <code>COVID-19</code>
-      </p>
       {covid19Data === null
-        ? ''
+        ? <code>now loading...</code>
         : <div>
+          <p><code>COVID-19</code></p>
           <Countries
             setCovid19Location={setCovid19Location}
             covid19Location={covid19Location}

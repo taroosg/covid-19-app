@@ -1,23 +1,45 @@
 import React from 'react';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 const Countries = props => {
 
   return (
     !props.covid19Data
       ? ''
-      : <select
-        onChange={e => props.setCovid19Location(e.target.value)}
-        defaultValue={'World'}
-      >
-        {
-          props.covid19Data
-            .map(x => x.location)
-            .filter((x, index, self) => self.indexOf(x) === index)
-            .map((x, index) =>
-              <option key={index} value={x} >{x}</option>
-            )
-        }
-      </select>
+      : <FormControl variant="outlined">
+        <InputLabel >Countries</InputLabel>
+        <Select
+          defaultValue={'World'}
+          onChange={e => props.setCovid19Location(e.target.value)}
+          label="Country"
+        >
+          {
+            props.covid19Data
+              .map(x => x.location)
+              .filter((x, index, self) => self.indexOf(x) === index)
+              .map((x, index) =>
+                <MenuItem key={index} value={x} >{x}</MenuItem>
+              )
+          }
+        </Select>
+      </FormControl>
+
+    // : <select
+    //   onChange={e => props.setCovid19Location(e.target.value)}
+    //   defaultValue={'World'}
+    // >
+    //   {
+    //     props.covid19Data
+    //       .map(x => x.location)
+    //       .filter((x, index, self) => self.indexOf(x) === index)
+    //       .map((x, index) =>
+    //         <option key={index} value={x} >{x}</option>
+    //       )
+    //   }
+    // </select>
   );
 }
 export default Countries;
