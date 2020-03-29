@@ -15,8 +15,10 @@ ReactDOM.render(
         { name: 'twitter:image', content: 'https://taroosg-covid-19-app.netlify.com/banner.jpg' },
         { property: 'og:image', content: 'https://taroosg-covid-19-app.netlify.com/banner.jpg' },
         { property: 'og:title', content: 'COVID-19' },
+        { property: 'og:og:site_name', content: 'COVID-19' },
+        { property: 'og:type', content: 'website' },
         { property: 'og:description', content: 'COVID-19-app' },
-        { property: 'og:url', content: process.env.PUBLIC_URL },
+        { property: 'og:url', content: 'https://taroosg-covid-19-app.netlify.com' },
       ]}
     />
     <App />
