@@ -1,17 +1,25 @@
 import React from 'react';
-import Datatable from './DataTable';
+import DataTable from './DataTable';
+import DataGraph from './DataGraph';
 
-const Datasets = props => {
+const DataSets = props => {
 
   const compare = param => (a, b) => !a.hasOwnProperty(param) || !b.hasOwnProperty(param) ? 0 : (a[param].toUpperCase() > b[param].toUpperCase()) ? -1 : 1;
 
   return (
-    <Datatable
-      covid19Data={props.covid19Data}
-      covid19Location={props.covid19Location}
-      compare={compare}
-    />
+    <div>
+      <DataGraph
+        covid19Data={props.covid19Data}
+        covid19Location={props.covid19Location}
+        compare={compare}
+      />
+      <DataTable
+        covid19Data={props.covid19Data}
+        covid19Location={props.covid19Location}
+        compare={compare}
+      />
+    </div>
   );
 }
 
-export default Datasets;
+export default DataSets;

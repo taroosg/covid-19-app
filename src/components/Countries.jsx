@@ -10,9 +10,9 @@ const Countries = props => {
     !props.covid19Data
       ? ''
       : <FormControl variant="outlined">
-        <InputLabel >Countries</InputLabel>
+        <InputLabel >Country</InputLabel>
         <Select
-          defaultValue={'World'}
+          defaultValue={'Japan'}
           onChange={e => props.setCovid19Location(e.target.value)}
           label="Country"
         >
@@ -21,7 +21,7 @@ const Countries = props => {
               .map(x => x.location)
               .filter((x, index, self) => self.indexOf(x) === index)
               .map((x, index) =>
-                <MenuItem key={index} value={x} >{x}</MenuItem>
+                <MenuItem key={index} value={x}>{x}</MenuItem>
               )
           }
         </Select>

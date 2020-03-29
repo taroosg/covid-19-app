@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Countries from './Countries';
-import Datasets from './Datasets';
+import DataSets from './DataSets';
 
 const Covid19 = props => {
   const [covid19Data, setCovid19Data] = useState(null);
-  const [covid19Location, setCovid19Location] = useState('World');
+  const [covid19Location, setCovid19Location] = useState('Japan');
   const requestUrl = 'https://us-central1-covid-19-92892.cloudfunctions.net/api/covid19'
   // const requestUrl = 'http://localhost:5000/covid-19-92892/us-central1/api/covid19';
   const getDataFromAPI = async url => {
@@ -27,7 +27,7 @@ const Covid19 = props => {
             covid19Location={covid19Location}
             covid19Data={covid19Data}
           />
-          <Datasets
+          <DataSets
             covid19Location={covid19Location}
             covid19Data={covid19Data}
           />
