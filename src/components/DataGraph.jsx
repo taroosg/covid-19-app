@@ -24,7 +24,7 @@ const DataGraph = props => {
           <XAxis
             domain={['dataMin', 'dataMax']}
             dataKey="date"
-            interval={Math.ceil(data.length / 3)}
+            interval={Math.floor(data.length / 7)}
           />
           <YAxis
             domain={['dataMin', 'dataMax']}
@@ -33,10 +33,9 @@ const DataGraph = props => {
           <Tooltip
             wrapperStyle={{
               borderColor: 'white',
-              boxShadow: '2px 2px 3px 0px rgb(204, 204, 204)',
             }}
-            contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
-            labelStyle={{ fontWeight: 'bold', color: '#666666' }}
+            contentStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+            labelStyle={{ fontWeight: 'bold', color: '#f2f2f2' }}
           />
           <CartesianGrid stroke="#f5f5f5" />
           <Line

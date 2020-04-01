@@ -12,6 +12,7 @@ const DataSets = props => {
   return (
     <div>
       <DataRadio
+        covid19Data={props.covid19Data}
         setDataType={setDataType}
       />
       <DataGraph

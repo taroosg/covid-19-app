@@ -11,35 +11,25 @@ const DataRadio = props => {
       <FormLabel component="legend"></FormLabel>
       <RadioGroup
         row
-        aria-label="position"
-        name="position"
+        aria-label="dataType"
+        name="dataType"
         defaultValue="new_cases"
         onChange={e => props.setDataType(e.target.value)}
       >
-        <FormControlLabel
-          value="new_cases"
-          control={<Radio color="primary" />}
-          label="new_cases"
-          labelPlacement="Top"
-        />
-        <FormControlLabel
-          value="new_deaths"
-          control={<Radio color="primary" />}
-          label="new_deaths"
-          labelPlacement="top"
-        />
-        <FormControlLabel
-          value="total_cases"
-          control={<Radio color="primary" />}
-          label="total_cases"
-          labelPlacement="top"
-        />
-        <FormControlLabel
-          value="total_deaths"
-          control={<Radio color="primary" />}
-          label="total_deaths"
-          labelPlacement="top"
-        />
+        {
+          Object.keys(props.covid19Data[0]).map((x, index) => {
+            return x.match(/date|location/)
+              ? false
+              :
+              <FormControlLabel
+                key={index}
+                value={x}
+                control={<Radio color="primary" />}
+                label={x}
+                labelPlacement="top"
+              />
+          })
+        }
       </RadioGroup>
     </FormControl>
   )
